@@ -1,17 +1,18 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
-import './index.less'
-import { useSelector } from 'react-redux'
+import './User.less'
+import { useAppSelector } from '@/store/hooks'
+import { selectCount } from '@/store/reducer/counter/counter'
 
 export default function Index() {
-  const count = useSelector((state:any)=>state.counter.count)
+  const { count } = useAppSelector(selectCount)
   useLoad(() => {
     console.log('Page loaded.')
   })
 
   return (
     <View className='index'>
-      <Text>购物车</Text>
+      <Text></Text>
       <Text>{count}</Text>
     </View>
   )

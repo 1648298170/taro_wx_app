@@ -1,7 +1,8 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
-    'pages/shop/index',
+    'pages/shop/Shop',
+    'pages/user/User',
   ],
   tabBar:{
     list:[
@@ -10,9 +11,13 @@ export default defineAppConfig({
         text: '首页'
       },
       {
-        pagePath: 'pages/shop/index',
+        pagePath: 'pages/shop/Shop',
         text: '购物车'
-      }
+      },
+      {
+        pagePath: 'pages/user/User',
+        text: '我的'
+      },
     ]
   },
   window: {

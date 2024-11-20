@@ -4,7 +4,7 @@ import devConfig from './dev'
 import prodConfig from './prod'
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig(async (merge, { command, mode }) => {
+export default defineConfig(async (merge) => {
   const baseConfig: UserConfigExport = {
     projectName: 'react-app',
     date: '2024-11-18',
@@ -17,6 +17,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
+    // 开启 HTML 插件
     plugins: [],
     defineConstants: {
     },

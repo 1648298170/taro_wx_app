@@ -19,6 +19,7 @@ const counterSlice = createSlice({
         decrement: (state) => {
             state.count -= 1
         },
+        // 使用 PayloadAction 类型声明 `action.payload` 的内容
         incrementByAmount: (state, action:PayloadAction<number>) => {
             state.count += action.payload
         },
@@ -27,6 +28,6 @@ const counterSlice = createSlice({
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 // 选择器等其他代码可以使用导入的 `RootState` 类型
-export const selectCount = (state:RootState)=>state.counter.count;
+export const selectCount = (state:RootState)=>state.counter;
 
 export default counterSlice.reducer;

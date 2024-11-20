@@ -3,6 +3,7 @@ import { useLaunch } from '@tarojs/taro'
 import { Provider } from 'react-redux'
 import './app.less'
 import { store } from './store'
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 
 function App({ children }: PropsWithChildren<any>) {
 
