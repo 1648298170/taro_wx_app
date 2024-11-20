@@ -1,0 +1,11 @@
+3.0/ray-app/node_modules/
+3.0/ray-app/.swc
+3.0/ray-app/dist/
+3.0/react-app/node_modules/
+3.0/react-app/.swc
+3.0/react-app/dist/
+3.0/vue3-taro-app/node_modules/
+3.0/vue3-taro-app/.swc
+3.0/vue3-taro-app/dist/
+2.0/pack_app/node_modules/
+2.0/pack_app/dist/

@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "pack_app",
+  "description": "打包分包配置",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
