@@ -22,7 +22,8 @@
     ],
     "paths": {
       // TS5090 leading './'
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "LocalComponets":["./src/componets"]
     }
   },
   "include": ["./src", "./types", "./config"],

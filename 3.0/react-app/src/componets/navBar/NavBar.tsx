@@ -14,9 +14,10 @@ import "./NavBar.less"
  * 设置导航栏标题颜色
  * 设置导航栏返回按钮
  */
-export default function NaviBar({ title }) {
+export default function NaviBar({children, title }) {
     const [navBarHeight, setNavBarHeight] = useState(0);
     const [navHeight, setNavHeight] = useState(0);
+    console.log("chidren",children)
 
     const getNavHeight = () => {
         // 获取胶囊位置,top 和 height 是胶囊的顶部和高度
@@ -37,9 +38,10 @@ export default function NaviBar({ title }) {
     })
     return (
         <View className="nav-bar" style={{ height: `${navBarHeight}px` }}>
-            <View className="nav-bar-title" style={{height: `${navHeight}px`}}>
-                
+            <View className="nav-bar-title" style={{ height: `${navHeight}px` }}>
+                {title}
             </View>
+            {children}
         </View>
     )
 }

@@ -1,54 +1,45 @@
-import { Button, Text } from '@tarojs/components'
+import { Button, Text, View } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import './index.less'
-import { increment,decrement, incrementByAmount, selectCount } from '@/store/reducer/counter/counter'
+import { increment, decrement, incrementByAmount, selectCount } from '@/store/reducer/counter/counter'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import NaviBar from '../componets/navBar/NavBar'
+import { NavBar,ScrollViewComponent } from 'LocalComponets'
 
 export default function Index() {
-  const {count} = useAppSelector(selectCount)
+  const { count } = useAppSelector(selectCount)
   const dipatch = useAppDispatch()
   useLoad(() => {
     console.log('Page loaded.:', count)
   })
 
+  //模拟请求数据
+  const fetchData = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('fetch data success')
+      }, 2000)
+    })
+  }
+
+
+
   return (
-    <>
-      <NaviBar title={'首页'}></NaviBar>
-      <Text>首页</Text>
-      <Text>{count}</Text>
-      <Button onClick={() => dipatch(increment())}>increment</Button>
-      <Button onClick={() => dipatch(decrement())}>decrement</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-      <Button onClick={() => dipatch(incrementByAmount(3))}>incrementByAmount</Button>
-    </>
+    <View>
+      <NavBar title={'首页'}>
+        <Text>首页</Text>
+      </NavBar>
+      <ScrollViewComponent  fetchData={fetchData}
+      >
+        <Text>首页</Text>
+        <Text>{count}</Text>
+        <Button onClick={() => dipatch(increment())}>increment</Button>
+        <Button onClick={() => dipatch(decrement())}>decrement</Button>
+        {
+          Array.from({ length: 10 }).map(() => {
+            return <View>列表内容</View>
+          })
+        }
+      </ScrollViewComponent>
+    </View>
   )
 }
