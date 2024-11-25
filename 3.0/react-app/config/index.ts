@@ -29,7 +29,7 @@ export default defineConfig(async (merge) => {
       }
     },
     alias: {
-      'LocalComponets':path.resolve(__dirname, '..','src/components')
+      'LocalComponets': path.resolve(__dirname, '..', 'src/components')
     },
     framework: 'react',
     compiler: 'webpack5',
@@ -101,7 +101,7 @@ export default defineConfig(async (merge) => {
     }
   }
   if (process.env.NODE_ENV === 'development') {
-    
+
     // 本地开发构建配置（不混淆压缩）
     return merge({}, baseConfig, devConfig)
   }

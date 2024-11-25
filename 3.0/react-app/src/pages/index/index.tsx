@@ -1,7 +1,7 @@
 import { Button, Text, View } from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
 import './index.less'
-import { increment, decrement, incrementByAmount, selectCount } from '@/store/reducer/counter/counter'
+import { increment, decrement, selectCount } from '@/store/reducer/counter/counter'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { NavBar,ScrollViewComponent } from 'LocalComponets'
 
@@ -10,15 +10,13 @@ export default function Index() {
   const dipatch = useAppDispatch()
   useLoad(() => {
     console.log('Page loaded.:', count)
+    Taro.getUserInfo().then(res => {
+      console.log(res)
+    })
   })
 
   //模拟请求数据
   const fetchData = () => {
-    Taro.request({
-      url:'/api/users'
-    }).then(res=>{
-      console.log(res)
-    })
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve('fetch data success')

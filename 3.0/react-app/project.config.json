@@ -2,7 +2,7 @@
     "miniprogramRoot": "dist/",
     "projectname": "react-app",
     "description": "构建小程序",
-    "appid": "wxb2c8504f7b63e454",
+    "appid": "wx5bd909799fc243e2",
     "setting": {
         "urlCheck": true,
         "es6": false,

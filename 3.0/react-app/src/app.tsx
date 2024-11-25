@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 import { store } from './store'
 import './app.less'
-import '@/untils/mock'
 
 function App({ children }: PropsWithChildren<any>) {
 

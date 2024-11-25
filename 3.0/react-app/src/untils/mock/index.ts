@@ -1,4 +1,4 @@
 import Mock from 'mockjs'
 import data from './data'
  
-Mock.mock('/api/users', 'get', data.items)
+Mock.mock('http://api/users', 'get', data.items)
